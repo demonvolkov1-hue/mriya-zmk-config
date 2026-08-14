@@ -14,6 +14,7 @@
 #define RAISE  2
 #define ADJUST 3
 #define NAVI   4
+#define GAME   5
 
 &lt {
     flavor = "balanced";
@@ -439,7 +440,7 @@ label= "NAVI"                                   ;
 // └────────────────────────────────────────────┘
 /*
 ┌───────┬───────┬───────┬───────┬───────┬───────┐                   ┌───────┬───────┬───────┬───────┬───────┬───────┐
-│       │  BKSP │ PGUP  │  TAB  │ HOME  │  ESC  │                   │  ESC  │ HOME  │  TAB  │ PGUP  │  BKSP │       │
+│       │  BKSP │ PGUP  │  TAB  │ HOME  │ GAME  │                   │  ESC  │ HOME  │  TAB  │ PGUP  │  BKSP │       │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                   ├───────┼───────┼───────┼───────┼───────┼───────┤                      
 │       │   ]   │   ←   │   ↑   │   →   │ ENTER │                   │ ENTER │   ←   │   ↑   │   →   │   [   │       │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                   ├───────┼───────┼───────┼───────┼───────┼───────┤
@@ -450,11 +451,37 @@ label= "NAVI"                                   ;
 */
 bindings = <
 
-&none   &kp BSPC        &kp PG_UP       &kp TAB        &kp HOME          &kp ESC   &kp ESC   &kp HOME   &kp TAB    &kp PG_UP   &kp BSPC   &none
-&none   &mt LGUI LBKT   &mt LALT LEFT   &mt LCTRL UP   &mt LSHFT RIGHT   &kp RET   &kp RET   &kp LEFT   &kp UP     &kp RIGHT   &kp RBKT   &none 
-&none   &kp GRAVE       &kp PG_DN       &kp DOWN       &kp END           &kp DEL   &kp DEL   &kp END    &kp DOWN   &kp PG_DN   &kp SQT    &none
-				                        &none          &trans            &none     &none     &trans     &none
+&none   &kp BSPC        &kp PG_UP       &kp TAB        &kp HOME          &tog GAME   &kp ESC   &kp HOME   &kp TAB    &kp PG_UP   &kp BSPC   &none
+&none   &mt LGUI LBKT   &mt LALT LEFT   &mt LCTRL UP   &mt LSHFT RIGHT   &kp RET     &kp RET   &kp LEFT   &kp UP     &kp RIGHT   &kp RBKT   &none 
+&none   &kp GRAVE       &kp PG_DN       &kp DOWN       &kp END           &kp DEL     &kp DEL   &kp END    &kp DOWN   &kp PG_DN   &kp SQT    &none
+				                        &none          &trans            &none       &none     &trans     &none
             >;
         };
+    
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄		
+
+        game_layer {
+// ┌────────────────────────────────────────────┐
+label= "GAME"                                   ;
+// └────────────────────────────────────────────┘
+/*
+┌───────┬───────┬───────┬───────┬───────┬───────┐                   ┌───────┬───────┬───────┬───────┬───────┬───────┐
+│   `   │  TAB  │   Q   │   E   │   R   │   F   │                   │  ESC  │ HOME  │  TAB  │ PGUP  │  BKSP │       │
+├───────┼───────┼───────┼───────┼───────┼───────┤                   ├───────┼───────┼───────┼───────┼───────┼───────┤                      
+│   T   │ LSHFT │   A   │   W   │   D   │   G   │                   │ ENTER │   ←   │   ↑   │   →   │   [   │       │
+├───────┼───────┼───────┼───────┼───────┼───────┤                   ├───────┼───────┼───────┼───────┼───────┼───────┤
+│       │ LCTRL │   X   │   S   │   V   │   B   │                   │  DEL  │  END  │   ↓   │ PGDN  │   '   │       │
+└───────┴───────┴───────┴───────┼───────┼───────┼───────┐   ┌───────┼───────┼───────┼───────┴───────┴───────┴───────┘
+                                │  LALT │ SPACE │       │   │       │       │       │
+                                └───────┴───────┴───────┘   └───────┴───────┴───────┘  
+*/
+bindings = <
+
+&kp GRAVE   &kp TAB     &kp Q   &kp E      &kp R       &kp F     &kp ESC     &kp HOME   &kp TAB    &kp PG_UP   &kp BSPC   &none
+&kp T       &kp LSHFT   &kp A   &kp W      &kp D       &kp G     &kp RET     &kp LEFT   &kp UP     &kp RIGHT   &kp RBKT   &none 
+&none       &kp LCTRL   &kp X   &kp S      &kp V       &kp B     &kp DEL     &kp END    &kp DOWN   &kp PG_DN   &kp SQT    &none
+				                &kp LALT   &kp SPACE   &none     &tog GAME   &trans     &none
+            >;
+        };    
     };
 };
