@@ -466,21 +466,21 @@ label= "GAME"                                   ;
 // └────────────────────────────────────────────┘
 /*
 ┌───────┬───────┬───────┬───────┬───────┬───────┐                   ┌───────┬───────┬───────┬───────┬───────┬───────┐
-│   `   │  TAB  │   Q   │   E   │   R   │   F   │                   │  ESC  │ HOME  │  TAB  │ PGUP  │  BKSP │       │
+│   `   │  TAB  │   Q   │   E   │   R   │   T   │                   │   1   │   2   │   3   │   4   │   V+  │       │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                   ├───────┼───────┼───────┼───────┼───────┼───────┤                      
-│   T   │ LSHFT │   A   │   W   │   D   │   G   │                   │ ENTER │   ←   │   ↑   │   →   │   [   │       │
+│   F   │ LSHFT │   A   │   W   │   D   │   G   │                   │ ENTER │   ←   │   ↑   │   →   │   V-  │       │
 ├───────┼───────┼───────┼───────┼───────┼───────┤                   ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │ LCTRL │   X   │   S   │   V   │   B   │                   │  DEL  │  END  │   ↓   │ PGDN  │   '   │       │
+│ LALT  │ LCTRL │   X   │   S   │   V   │   B   │                   │  DEL  │  END  │   ↓   │ PGDN  │  MUTE │       │
 └───────┴───────┴───────┴───────┼───────┼───────┼───────┐   ┌───────┼───────┼───────┼───────┴───────┴───────┴───────┘
-                                │  LALT │ SPACE │       │   │       │       │       │
+                                │  LALT │ LSHFT │ SPACE │   │       │       │       │
                                 └───────┴───────┴───────┘   └───────┴───────┴───────┘  
 */
 bindings = <
 
-&kp GRAVE   &kp TAB     &kp Q   &kp E      &kp R       &kp F     &kp ESC     &kp HOME   &kp TAB    &kp PG_UP   &kp BSPC   &none
-&kp T       &kp LSHFT   &kp A   &kp W      &kp D       &kp G     &kp RET     &kp LEFT   &kp UP     &kp RIGHT   &kp RBKT   &none 
-&none       &kp LCTRL   &kp X   &kp S      &kp V       &kp B     &kp DEL     &kp END    &kp DOWN   &kp PG_DN   &kp SQT    &none
-				                &kp LALT   &kp SPACE   &none     &tog GAME   &trans     &none
+&kp GRAVE   &kp TAB     &kp Q   &kp E      &kp R       &kp T       &kp N1     &kp N2     &kp N3     &kp N4      &kp C_VOL_UP   &none
+&kp F       &kp LSHFT   &kp A   &kp W      &kp D       &kp G       &kp RET    &kp LEFT   &kp UP     &kp RIGHT   &kp C_VOL_DN   &none 
+&kp LALT    &kp LCTRL   &kp X   &kp S      &kp V       &kp B       &kp DEL    &kp END    &kp DOWN   &kp PG_DN   &kp C_MUTE     &none
+				                &kp LALT   &kp LSHFT   &kp SPACE   &tog GAME  &trans     &none
             >;
         };    
     };
